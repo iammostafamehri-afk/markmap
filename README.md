@@ -1,25 +1,133 @@
-# markmap
-
-[![Join the chat at https://gitter.im/gera2ld/markmap](https://badges.gitter.im/gera2ld/markmap.svg)](https://gitter.im/gera2ld/markmap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-Visualize your Markdown as mindmaps.
-
-This project is heavily inspired by [dundalek's markmap](https://github.com/dundalek/markmap).
-
-👉 [Try it out](https://markmap.js.org/repl).
-
-## Related Projects
-
-Markmap is also available in:
-
-- [VSCode](https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode) and [Open VSX](https://open-vsx.org/extension/gera2ld/markmap-vscode)
-- Vim / Neovim:
-  - [coc-markmap](https://github.com/gera2ld/coc-markmap) ![NPM](https://img.shields.io/npm/v/coc-markmap.svg) - powered by [coc.nvim](https://github.com/neoclide/coc.nvim)
-  - [markmap.vim](https://github.com/Zeioth/markmap.nvim): for using without [coc.nvim](https://github.com/neoclide/coc.nvim)
-- Emacs: [eaf-markmap](https://github.com/emacs-eaf/eaf-markmap) -- powered by [EAF](https://github.com/emacs-eaf/emacs-application-framework)
-- MCP Server: [markmap-mcp-server](https://github.com/jinzcdev/markmap-mcp-server) [![NPM Version](https://img.shields.io/npm/v/@jinzcdev/markmap-mcp-server.svg)](https://www.npmjs.com/package/@jinzcdev/markmap-mcp-server) - powered by [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
-- AI agents: [mindmap-skills](https://github.com/galiacheng/mindmap-skills) - generate an interactive Markmap from a file, URL, or topic, without leaving your AI agent
-
-## Usage
-
-👉 [Read the documentation](https://markmap.js.org/docs) for more detail.
+const mindMapData = {
+  id: "root",
+  topic: "استاندارد INSO 20263 - چهارپایه‌های پله‌دار",
+  children: [
+    {
+      topic: "مشخصات سند",
+      children: [
+        { topic: "INSO 20263" },
+        { topic: "چاپ اول 1398" },
+        { topic: "2020" },
+        { topic: "Modification of BS EN 14183:2003" },
+        { topic: "Step stools" },
+        { topic: "ICS 97.145" }
+      ]
+    },
+    {
+      topic: "هدف و دامنه کاربرد",
+      children: [
+        { topic: "تعیین الزامات چهارپایه‌های پله‌دار" },
+        { topic: "شامل طراحی، ابعاد، مواد، آزمون، اعلام انطباق" },
+        { topic: "شامل پله‌های نوع پلکانی" },
+        { topic: "شامل چهارپایه نوع گنبدی" },
+        { topic: "عدم کاربرد برای نردبان‌ها" },
+        { topic: "حداکثر بار کل 150 kg" }
+      ]
+    },
+    {
+      topic: "مراجع الزامی",
+      children: [
+        { topic: "BS EN ISO 14731" },
+        { topic: "BS EN ISO 3834-1" },
+        { topic: "BS EN ISO 3834-2" },
+        { topic: "BS EN ISO 3834-3" },
+        { topic: "BS EN ISO 3834-4" },
+        { topic: "EN 12526" }
+      ]
+    },
+    {
+      topic: "اصطلاحات و تعاریف",
+      children: [
+        { topic: "چهارپایه پله‌دار" },
+        { topic: "step stool" },
+        { topic: "پله‌های نوع پلکانی" },
+        { topic: "stair type steps" },
+        { topic: "چهارپایه نوع گنبدی" },
+        { topic: "dome type step stool" },
+        { topic: "اجزای چهارپایه", children: [
+          { topic: "پله" },
+          { topic: "سکو / نشیمنگاه" },
+          { topic: "پایه صعودی" },
+          { topic: "پایه تکیه‌گاه" }
+        ]}
+      ]
+    },
+    {
+      topic: "ابعاد عملکردی و شناسه‌گذاری",
+      children: [
+        { topic: "نمادها", children: [
+          { topic: "A: پایه ثابت" },
+          { topic: "B: پایه تاشو" },
+          { topic: "C: نوع پلکانی" },
+          { topic: "D: پله جمع‌شونده" },
+          { topic: "E: پله بیرون‌کشیدنی" },
+          { topic: "F: نوع گنبدی" }
+        ]},
+        { topic: "کمیت‌ها", children: [
+          { topic: "h: ارتفاع کل" },
+          { topic: "a: ارتفاع اولین پله" },
+          { topic: "b1: عرض سکو/نشیمنگاه" },
+          { topic: "b2: عرض بیرونی پایه‌ها" },
+          { topic: "b3: عرض هر پله" },
+          { topic: "b5: عمق سکو" },
+          { topic: "b6: عمق بیرونی پایه‌ها" },
+          { topic: "b7: عمق تمام پله‌ها" },
+          { topic: "b8: عمق نوع پلکانی" },
+          { topic: "α: زاویه پله" },
+          { topic: "β: زاویه پشتی" }
+        ]},
+        { topic: "الزامات ابعادی", children: [
+          { topic: "فاصله‌بندی یکنواخت پله‌ها" },
+          { topic: "تلرانس ±2 mm" },
+          { topic: "نیاز به نرده در ارتفاع بیش از 750 mm" },
+          { topic: "در صورت سکوی کمتر از 400×240 mm" }
+        ]},
+        { topic: "شناسه‌گذاری محصول" }
+      ]
+    },
+    {
+      topic: "انواع چهارپایه",
+      children: [
+        { topic: "پایه ثابت" },
+        { topic: "پایه تاشو" },
+        { topic: "نوع پلکانی ثابت/تاشو" },
+        { topic: "پله‌های جمع‌شونده" },
+        { topic: "پله‌های بیرون‌کشیدنی" },
+        { topic: "نوع گنبدی" }
+      ]
+    },
+    {
+      topic: "الزامات اضافی",
+      children: [
+        {
+          topic: "مواد",
+          children: [
+            { topic: "پلاستیک" },
+            { topic: "مقاومت به پیری و دما" },
+            { topic: "الیاف شیشه و حفاظت در برابر نفوذ آب" },
+            { topic: "فولاد با حداقل ضخامت 0.90 mm" },
+            { topic: "آلومینیوم با حداقل ضخامت 1.20 mm" }
+          ]
+        },
+        {
+          topic: "پله‌ها و سکوها",
+          children: [
+            { topic: "مقاومت در برابر لغزش" },
+            { topic: "اتصال محکم روکش به پله" },
+            { topic: "استحکام و دوام اتصال" },
+            { topic: "عدم شکستگی یا ترک" }
+          ]
+        },
+        {
+          topic: "مقاومت به لغزش",
+          children: [
+            { topic: "کفشک / تکیه‌گاه" },
+            { topic: "جنس مقاوم به لغزش" },
+            { topic: "غلتک‌ها و چرخ‌ها" },
+            { topic: "قفل یا غیرفعال شدن خودکار هنگام بارگذاری" }
+          ]
+        },
+        {
+          topic: "ایمنی مکانیکی",
+          children: [
+            { topic: "ممانعت از بازشدن ناخواست
